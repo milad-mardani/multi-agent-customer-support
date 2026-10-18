@@ -16,19 +16,19 @@ The system is structured as a stateful graph (`StateGraph`) where specialized ag
 
 ### 1. Triage Node
 Classifies incoming customer messages into specific departments (`Billing`, `Technical`, `General`) using Pydantic structured output.
-![Triage Node](overall_architecture/1.png)
+![Triage Node](overall_architecture/2.png)
 
 ### 2. Billing Node
 Manages subscription statuses, payments, and transaction queries using custom tools and mock databases.
-![Billing Node](overall_architecture/2.png)
+![Billing Node](overall_architecture/3.png)
 
 ### 3. Technical Node (RAG Pipeline)
 Answers complex technical troubleshooting questions by performing semantic search over local documentation (`FAISS` vector store + HuggingFace embeddings).
-![Technical Node](overall_architecture/3.png)
+![Technical Node](overall_architecture/4.png)
 
 ### 4. General Node
 Handles polite greetings, general inquiries, and basic customer requests.
-![General Node](overall_architecture/4.png)
+![General Node](overall_architecture/5.png)
 
 ### 5. Sentiment Analysis Node
 Evaluates the emotional tone (`Positive`, `Neutral`, `Negative`) of the conversation to detect angry or dissatisfied users.
@@ -43,7 +43,7 @@ Automatically interrupts the workflow on strongly negative sentiment or angry cu
 ## 📊 Compiled LangGraph Execution Flow
 
 The compiled state graph execution and routing logic:
-![Compiled Graph](overall_architecture/5.png)
+![Compiled Graph](overall_architecture/1.png)
 
 ---
 
